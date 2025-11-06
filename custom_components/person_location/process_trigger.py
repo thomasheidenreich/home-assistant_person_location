@@ -290,7 +290,7 @@ def setup_process_trigger(pli):
                 )
                 target = PERSON_LOCATION_ENTITY(trigger.targetName, pli)
 
-                target.this_entity_info["trigger_count"] += 1
+                target.this_entity_info["trigger_count"] = target.this_entity_info.get("trigger_count", 0) + 1
 
                 if triggerTo in ["NotSet", STATE_UNAVAILABLE, STATE_UNKNOWN]:
                     _LOGGER.debug(
